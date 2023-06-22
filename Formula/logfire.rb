@@ -5,34 +5,42 @@
 class Logfire < Formula
   desc "Logfire command line interface"
   homepage "https://github.com/logfire-sh/cli-private"
-  version "0.1.41"
+  version "0.1.43"
   license "Apache 2.0"
 
   depends_on "git"
 
   on_macos do
-    url "git@github.com:logfire-sh/cli-private/releases/download/v0.1.41/logfire_Darwin_x86_64.tar.gz", using: CurlDownloadStrategy
-    sha256 "161cd7d191e0557a98b18f91c512f904697121815e1730542ff25572152ba29f"
+    if Hardware::CPU.intel?
+      url "git@github.com:logfire-sh/cli-private/releases/download/v0.1.43/logfire_Darwin_x86_64.tar.gz", using: CurlDownloadStrategy
+      sha256 "d18999937b8de9d284663fd797a19ebd19f950ce9cbcde88ff2497c7515aab72"
 
-    def install
-      bin.install "logfire"
+      def install
+        bin.install "logfire"
+      end
     end
-
     if Hardware::CPU.arm?
-      def caveats
-        <<~EOS
-          The darwin_arm64 architecture is not supported for the Logfire
-          formula at this time. The darwin_amd64 binary may work in compatibility
-          mode, but it might not be fully supported.
-        EOS
+      url "git@github.com:logfire-sh/cli-private/releases/download/v0.1.43/logfire_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "6b9a5f7f33297aedc5c608c54ba1f8d04f80752ea45cfacc6928c82ca6873365"
+
+      def install
+        bin.install "logfire"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "git@github.com:logfire-sh/cli-private/releases/download/v0.1.41/logfire_Linux_x86_64.tar.gz", using: CurlDownloadStrategy
-      sha256 "4a573b6254ee59831dba602d77adfa1d82bc2f815efaefe94ba198b2f48f8508"
+      url "git@github.com:logfire-sh/cli-private/releases/download/v0.1.43/logfire_Linux_x86_64.tar.gz", using: CurlDownloadStrategy
+      sha256 "2957db42f874a48c4c246f24244d7ecd9a41168ec378884f329f0c896b7de178"
+
+      def install
+        bin.install "logfire"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "git@github.com:logfire-sh/cli-private/releases/download/v0.1.43/logfire_Linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "b535b1aee6deb28c2cffd4fa4b11f93e4e9259d5ea933d6ce2550b4957ea17bf"
 
       def install
         bin.install "logfire"
