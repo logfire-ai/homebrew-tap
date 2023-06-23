@@ -13,7 +13,7 @@ class Logfire < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/logfire-sh/cli/releases/download/v0.1.2/logfire_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "914c3bb26eb3c2fd59aab1043feb7e6ab73e330ba700240122dc8bf5b631a7e9"
+      sha256 "a9c1874e15231facd04f74434807ec850a66fa9ea72856aea0facdc587c2c348"
 
       def install
         bin.install "logfire"
@@ -21,7 +21,7 @@ class Logfire < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/logfire-sh/cli/releases/download/v0.1.2/logfire_Darwin_x86_64.tar.gz", using: CurlDownloadStrategy
-      sha256 "70d92b379d1edd86da9646b93de444f8c9d7fa0e8ee02406ffa3cfadaa4f382f"
+      sha256 "a40ec9e83620cb94fef0d6563831c8a179fb27c64cddcbe5a963e146ec5c9df2"
 
       def install
         bin.install "logfire"
@@ -32,7 +32,7 @@ class Logfire < Formula
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/logfire-sh/cli/releases/download/v0.1.2/logfire_Linux_arm.tar.gz", using: CurlDownloadStrategy
-      sha256 "deaeb0b99bce8ea5f9d59ae98df524b474ff0cfa98567cece0b95723782dc2da"
+      sha256 "06bda2415c24707e01e0bf44850b78ffb16c267e28d1b46cd2b515d505cc1d50"
 
       def install
         bin.install "logfire"
@@ -40,7 +40,7 @@ class Logfire < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/logfire-sh/cli/releases/download/v0.1.2/logfire_Linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "5229273c2cc68bfab67547f7d0b0a43cf35eb6451ca26ba9263ecd825e4a48f1"
+      sha256 "6ff04f5fde0ad59050465a870cc82746789a93b767405408dd536cfccdebb83f"
 
       def install
         bin.install "logfire"
@@ -48,7 +48,7 @@ class Logfire < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/logfire-sh/cli/releases/download/v0.1.2/logfire_Linux_x86_64.tar.gz", using: CurlDownloadStrategy
-      sha256 "99df726c7205af1642b8ba92e8a75e40b6057cb7a5d8310bc4705f748e472e4f"
+      sha256 "0ae3d80ec69637109f2a38560e7983cb2ec5090c36a62758827a00d3dc09514a"
 
       def install
         bin.install "logfire"
