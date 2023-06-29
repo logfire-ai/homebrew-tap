@@ -5,23 +5,23 @@
 class Logfire < Formula
   desc "Logfire command line interface"
   homepage "https://github.com/"
-  version "0.1.93"
+  version "0.1.94"
   license "Apache 2.0"
 
   depends_on "git"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com//releases/download/v0.1.93/logfire_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "60eb98e82df276b642771ba01e7b908e933136e95d7e6b2d6d1f5c9decdd3ce9"
+      url "https://github.com//releases/download/v0.1.94/logfire_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "f2e70b853613f4c6e2f8a9d71a29b33396a065b401cc3c3ac6488bf9f54cb4fd"
 
       def install
         bin.install "logfire"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com//releases/download/v0.1.93/logfire_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "1da9540a7064157e5f3ac74eb999d4b98a7cd12e7ef9fb4c2d05db966bf9c0f3"
+      url "https://github.com//releases/download/v0.1.94/logfire_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "63d395e804fb226e4f22ddb55f531084b53f0f8dec806509115ddcb6ece7764b"
 
       def install
         bin.install "logfire"
@@ -31,16 +31,16 @@ class Logfire < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com//releases/download/v0.1.93/logfire_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "5fc992d25802df12f599be566f24236ec83f091c83615d0355b6103c00f03ed6"
+      url "https://github.com//releases/download/v0.1.94/logfire_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "d232b2b0cde3a69f9d0aa6abb831667466737bdb9d3cdde8ec5ccdf0429f6ed2"
 
       def install
         bin.install "logfire"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com//releases/download/v0.1.93/logfire_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "95c862fccd762f5dd9c1b0c2e54006d84c4416cd5302b9d558907d72d65dbd77"
+      url "https://github.com//releases/download/v0.1.94/logfire_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "1e55ba842b05424066fbe519117114f0855df6966f2e63ab471fb25bde5d80fa"
 
       def install
         bin.install "logfire"
