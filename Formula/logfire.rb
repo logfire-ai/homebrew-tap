@@ -5,15 +5,15 @@
 class Logfire < Formula
   desc "Logfire command line interface"
   homepage "https://github.com/logfire-sh/cli"
-  version "1.9"
+  version "2.0"
   license "Apache 2.0"
 
   depends_on "git"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/logfire-sh/cli/releases/download/v1.9/logfire_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "9e4d8ee8922c7d8768482e78d67c1c03743cc27bbf6ca8434dd96a09b2402617"
+      url "https://github.com/logfire-sh/cli/releases/download/v2.0/logfire_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "281d995c347f4e2b6c645a78a51c498eafb3bc4f1526a02ea1c2501050ee47be"
 
       def install
         bin.install "logfire"
@@ -23,8 +23,8 @@ class Logfire < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/logfire-sh/cli/releases/download/v1.9/logfire_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "1e14d50e90c886e6447ac24cc2591c4ff9fe0da85f36782de967feeb8b67a2f8"
+      url "https://github.com/logfire-sh/cli/releases/download/v2.0/logfire_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "33919033df2cc7b2b3eb1e61fb169b84ddef79f1396232f13f3613ac1099095b"
 
       def install
         bin.install "logfire"
