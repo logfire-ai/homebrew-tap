@@ -13,7 +13,7 @@ class Logfire < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/logfire-sh/cli/releases/download/v7.0/logfire_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "4ce2c2fd82a1eddd546964e4af8d736d8943037f39e12783ef52489b1f362e5f"
+      sha256 "2b1eaede87834d32dc8f6c34f55e290ab432699fcbf92fb0e3d765f2e2c92ca8"
 
       def install
         bin.install "logfire"
@@ -24,7 +24,7 @@ class Logfire < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/logfire-sh/cli/releases/download/v7.0/logfire_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "17cb528c0b8bd32529f24b02136ad6dca511b534deaed137d90d8db74f4c9a65"
+      sha256 "5b889671d2add1a96f8b1bcaaa9bd2086960284275b541885dce67cf7bad9bf2"
 
       def install
         bin.install "logfire"
